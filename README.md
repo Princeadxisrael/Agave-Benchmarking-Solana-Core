@@ -1,16 +1,6 @@
 # Agave-Benchmarking-Solana-Core
 This repository contains research, test findings, analysis, and results related to Solana Core, Solana validator performance and Agave-specific optimizations. It documents benchmarking experiments, statistical insights, and code changes made during testing.
 
-# Repository Structure
-/Agave-Benchmarking-Solana-Core
-├── component-that-was-benchmarked/            # Criterion benchmarks and reports
-    ├── agave-changes/         # Notes and diffs related to Agave modifications
-    ├── analysis/              # Statistical analysis, graphs, and insights
-    ├── reports/               # Markdown/PDF reports of findings
-    ├── tests/                 # Custom test scripts and results
-├── README.md              # Overview of the research and methodology
-├── .gitignore             # Ignore unnecessary files
-
 # Goals of This Repository
 
 - To systematically analyze performance optimizations for Agave and Solana.
