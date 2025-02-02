@@ -22,26 +22,25 @@ The setup function prepares the test environment:
 
 ## Detailed Walkthrough
 
-The b.iter method executes the Criterion's bench function multiple times and gathers detailed metrics, such as mean, standard deviation, and iteration times.
+The `b.iter` method executes the Criterion's bench function multiple times and gathers detailed metrics, such as mean, standard deviation, and iteration times.
 Latency Calculation:
-Time for handle_forwarding is captured with Instant::now() and elapsed().
+Time for `handle_forwarding` is captured with `Instant::now()` and `elapsed()`.
 
-The latency per packet is calculated in microseconds (elapsed_time.as_micros()).
-Throughput Calculation:
+The `latency per packet` is calculated in microseconds `elapsed_time.as_micros()`.
 
+```
+***Throughput Calculation:***
 Packets processed per second are derived using:
 Throughput
 =
 Packets Processed
 ------------------
 Elapsed Time (seconds)
-
+```
  
-Statistical Analysis:
+#### Statistical Analysis:
 
-Criterion automatically provides statistical insights, such as the mean and variance of throughput and latency, which are essential for rigorous benchmarking.
+Criterion automatically provides statistical insights, such as the mean and variance of throughput and latency, which are essential for this sort of tests.
 
-criterion_group! and criterion_main! are used to define and run the benchmark tests.
-Resetting Packet State:
-
- The forwarded flag is reset after each iteration for reusability.
+`criterion_group!` and `criterion_main!` are used to define and run the benchmark tests.
+The `forwarded` flag is reset after each iteration for reusability.

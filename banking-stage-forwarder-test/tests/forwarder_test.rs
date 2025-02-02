@@ -35,7 +35,7 @@ use {
             Arc,
         },
         tempfile::TempDir,
-        // test::Bencher,
+        
     };
 
 
@@ -119,7 +119,7 @@ fn setup(num_packets: usize, contentious_transaction: bool) -> BenchSetup {
 
     let connection_cache = ConnectionCache::new("connection_cache_test");
     // use a restrictive data budget to bench everything except actual sending data over
-    // connection.
+    // connection. Best to simulate realistic transaction loads here.
     let data_budget = DataBudget::restricted();
     let forwarder = Forwarder::new(
         poh_recorder,
@@ -140,8 +140,9 @@ fn setup(num_packets: usize, contentious_transaction: bool) -> BenchSetup {
     }
 }
 
+///This function runs the test
 fn bench_forwarder_throughput_and_latency(c: &mut Criterion) {
-    let num_packets = 10240; // Number of packets to process per batch.
+    let num_packets = 10240; // Number of packets to process per batch. Thinking of a dynamic way to do this>
     let BenchSetup {
         exit,
         poh_service,
@@ -179,7 +180,7 @@ fn bench_forwarder_throughput_and_latency(c: &mut Criterion) {
             let throughput_packets_per_second =
                 packets_processed as f64 / elapsed_time.as_secs_f64();
 
-            // Log results (optional)
+            // Log results
             println!(
                 "Throughput: {:.2} packets/second, Latency: {:.2} µs",
                 throughput_packets_per_second,
@@ -193,6 +194,6 @@ fn bench_forwarder_throughput_and_latency(c: &mut Criterion) {
     poh_service.join().unwrap();
 }
 
-// Criterion test groups
+// test groups
 criterion_group!(benches, bench_forwarder_throughput_and_latency);
 criterion_main!(benches);
