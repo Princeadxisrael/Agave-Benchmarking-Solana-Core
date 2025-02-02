@@ -7,7 +7,7 @@ This repository contains research, test findings, analysis, and results related 
 
 - To document and compare benchmark results over different configurations.
 
-- To provide statistical insights into throughput, latency, and resource utilization.
+- To provide statistical insights into throughput, latency, and resource utilization of transactions packets through the Solana-core.
 
 - To maintain reproducibility of experiments.
 
