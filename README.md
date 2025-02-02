@@ -19,7 +19,7 @@ This repository contains research, test findings, analysis, and results related 
 
 - Criterion.rs (for benchmarking)
 
-- Python (for data analysis & visualization)
+- Python (for data analysis & visualization).ou can also use Criterion for this.
 
 # Installation
 
@@ -36,11 +36,12 @@ Benchmarks are executed using Criterion.rs.
 
 To run a benchmark:
 
-bash `cargo criterion`
+bash `cargo bench -p target folder --bench --test folder`
 
 Results are stored in `./target/criterion` and can be viewed via HTML reports
 
 # Data Collection & Analysis
+Criterion provides visual tools to help interpret estimates
 
 ## Storing Benchmark Results
 
@@ -56,5 +57,3 @@ Criterion automatically provides:
 
 - Performance regression detection over time.
 
-To extract key insights, use:
-`python scripts/analyze_results.py`
