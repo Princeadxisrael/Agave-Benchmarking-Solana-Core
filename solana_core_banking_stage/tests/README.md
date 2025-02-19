@@ -39,7 +39,7 @@ Elapsed Time (seconds)
 ```
  
 #### Statistical Analysis:
-
+Here is how we perform statistical analyis
 Criterion automatically provides statistical insights, such as the mean and variance of throughput and latency, which are essential for this sort of tests.
 
 `criterion_group!` and `criterion_main!` are used to define and run the benchmark tests.
